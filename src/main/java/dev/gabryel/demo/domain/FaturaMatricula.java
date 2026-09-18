@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -27,10 +28,10 @@ public class FaturaMatricula {
     private BigDecimal valor;
 
     @Column(name = "data_vencimento")
-    private LocalDateTime vencimento;
+    private LocalDate vencimento;
 
     @Column(name = "data_cancelamento")
-    private LocalDateTime cancelamento;
+    private LocalDate cancelamento;
 
     @Column(name = "data_pagamento")
     private LocalDateTime pagamento;

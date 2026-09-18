@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -26,13 +27,13 @@ public class Matricula {
     private Aluno aluno;
 
     @Column(name = "data_matricula")
-    private LocalDateTime dataMatricula;
+    private LocalDate dataMatricula;
 
     @Column(name = "dia_vencimento")
-    private LocalDateTime diaVencimento;
+    private Integer diaVencimento;
 
     @Column(name = "data_encerramento")
-    private LocalDateTime dataEncerramento;
+    private LocalDate dataEncerramento;
 
     @Enumerated(EnumType.STRING)
     private StatusMatricula status = StatusMatricula.ATIVA;
@@ -40,7 +41,7 @@ public class Matricula {
     @PrePersist
     public void prePersist(){
         if (dataMatricula == null){
-            dataMatricula = LocalDateTime.now();
+            dataMatricula = LocalDate.now();
         }
     }
 }

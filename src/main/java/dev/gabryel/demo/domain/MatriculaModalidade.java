@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -35,16 +36,16 @@ public class MatriculaModalidade {
     private Plano plano;
 
     @Column(name = "data_inicio")
-    private LocalDateTime dataInico;
+    private LocalDate dataInico;
 
     @Column(name = "data_fim")
-    private LocalDateTime dataFim;
+    private LocalDate dataFim;
 
 
     @PrePersist
     private void prePersist(){
         if(dataInico == null){
-            dataInico = LocalDateTime.now();
+            dataInico = LocalDate.now();
         }
     }
 }

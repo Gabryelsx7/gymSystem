@@ -22,7 +22,7 @@ public class Assiduidade {
     @JoinColumn(name = "matricula_id")
     private Matricula matricula;
 
-    @Column(name = "data_inicio")
+    @Column(name = "data_entrada")
     private LocalDateTime dataInico;
 
     @Column(name = "data_saida")
