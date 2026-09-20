@@ -1,5 +1,6 @@
 package dev.gabryel.demo.domain;
 
+import dev.gabryel.demo.domain.enums.Sexo;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,8 +27,9 @@ public class Aluno {
     @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "sexo", length = 1)
-    private String sexo;
+    private Sexo sexo;
 
     private String telefone;
 
